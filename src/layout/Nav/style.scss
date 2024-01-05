@@ -1,44 +1,47 @@
 .nav {
   background-image: url("../../assets/images/Reng.png");
-    background-position: center;
-    background-size: cover;
-    height: 10vh;
+  background-position: center;
+  background-size: cover;
+  height: 10vh;
 
-  .nav-first{
+  .nav-first {
     width: 100%;
     height: 100%;
     display: flex;
-  justify-content: space-around;
-  align-items: center;
-  h2 {
-    color: white;
-  }
-  ul {
-    width: 60%;
-    display: flex;
-    padding: 6px;
     justify-content: space-around;
     align-items: center;
-    li {
-      a {
+    h2 {
+      color: white;
+    }
+    ul {
+      width: 60%;
+      display: flex;
+      padding: 6px;
+      justify-content: space-around;
+      align-items: center;
+      li {
         color: white;
         letter-spacing: 1px;
         font-size: 12px;
         cursor: pointer;
+        a {
+          color: white;
+          letter-spacing: 1px;
+          font-size: 12px;
+          cursor: pointer;
+        }
+      }
+      img {
+        cursor: pointer;
+      }
+      button {
+        cursor: pointer;
+        border-radius: 20px;
+        padding: 10px 20px;
+        border: 1px solid white;
+        background-color: transparent;
+        color: white;
       }
     }
-    img{
-        cursor: pointer;
-    }
-    button {
-      cursor: pointer;
-      border-radius: 20px;
-      padding: 10px 20px;
-      border: 1px solid white;
-      background-color: transparent;
-      color: white;
-    }
   }
-  }
-
 }

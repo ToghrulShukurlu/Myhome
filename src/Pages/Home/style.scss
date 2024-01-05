@@ -38,6 +38,38 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  .chatbox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 300px;
+   z-index: 2;
+   .inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input[type="text"],
+  input[type="tel"] {
+    width: 200px;
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+
+  input[name="message"] {
+    width: 260px; 
+    height: 100px; 
+    resize: vertical; 
+  }
+}
+}
+
+
+
   h2 {
     color: white;
     text-align: center;

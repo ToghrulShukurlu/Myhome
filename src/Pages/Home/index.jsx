@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.scss";
 import img from "../../assets/images/image_1.jpg";
 import ic1 from "../../assets/icons/Icon (8).svg";
 import ic2 from "../../assets/icons/Icon (9).svg";
 import ic3 from "../../assets/icons/Icon (10).svg";
 import ic4 from "../../assets/icons/Icon (11).svg";
-import { stuff } from "../../Data/data"
+import { stuff } from "../../Data/data";
 
 const Home = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsChatOpen(!isChatOpen);
+  };
+
   return (
     <div>
       <div className="second">
@@ -16,12 +22,31 @@ const Home = () => {
         <p>
           Ədalətli və dəqiq qiymətləndirmə ilə daha asan torpaq seçimi edin.
         </p>
-        <button>Görüş tələb et</button>
-
+        <button onClick={handleClick}>Bizimle Əlaqə</button>
+        {isChatOpen && (
+          <div className="chatbox">
+            <h3>Bizimlə Əlaqə</h3>
+            <form>
+              <div className="input-field">
+                <label htmlFor="fullname">Tam Adınız</label>
+                <input type="text" id="fullname" name="fullname" />
+              </div>
+              <div className="input-field">
+                <label htmlFor="phone">Telefon Nömrəniz</label>
+                <input type="tel" id="phone" name="phone" />
+              </div>
+              <div className="input-field">
+                <label htmlFor="message">Mesajınız</label>
+                <textarea id="message" name="message"></textarea>
+              </div>
+              <button type="submit">Gönder</button>
+            </form>
+          </div>
+        )}
         <img src={img} alt="" />
       </div>
 
-      <section className="first">
+      <section className="first" id="#first">
         <h3>Xidmətlərimiz</h3>
         <div className="banners">
           <div className="one" style={{ backgroundColor: "#4a43bc" }}>
@@ -76,7 +101,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="about-company">
+      <section className="about-company" id="#about">
         <h1>Şirkət haqqında</h1>
         <p>
           MyHomeAz  platformu mənzil bazarında mənzilinizi sadəcə bir neçə
@@ -107,22 +132,22 @@ const Home = () => {
         </ul>
       </section>
 
-      <section className="members">
+      <section className="members" id="#members">
         <h2 className="heading">Bizim komanda</h2>
         <div className="stuff-part">
-        {stuff.map((item, index) => (
+          {stuff.map((item, index) => (
             <div id="stuff">
               <img src={item.photo} alt="" />
               <div className="box-text">
                 <span>{item.name}</span>
                 <h6>{item.job}</h6>
               </div>
-          </div>
-        ))}
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="contact-us">
+      <section className="contact-us" id="#contact">
         <h1>Bizimlə əlaqə qurmaq istəyirsən?</h1>
         <p>
           Öz mobil nömrənizi qeyd etdikdən 3 iş günündə sizinlə əlaqə
